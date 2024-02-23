@@ -1,0 +1,165 @@
+@import 'reset.css';
+
+.header {
+	background-color: var(--colorPrimary);
+}
+
+.logo span {
+	color: var(--colorTertiary);
+}
+
+.cart-header,
+.details-header,
+.footer,
+.checkout {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.items,
+.cart-header {
+	padding-bottom: 32px;
+}
+
+.details-header {
+	margin-top: 32px;
+	font-size: 16px;
+	color: #333;
+}
+
+.items {
+	margin-top: 32px;
+}
+
+.details-title,
+.total-title {
+	font-size: var(--text);
+	color: #333;
+	font-weight: 500;
+}
+
+.shopping-cart {
+	height: 100vh;
+	border-radius: 16px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: var(--container-padding);
+}
+.cart-header {
+	border-bottom: 1px solid var(--colorSecondary);
+	padding-bottom: 32px;
+}
+.cart-title {
+	font-size: var(--h1);
+	font-weight: bold;
+	color: #333;
+}
+
+.cart-itemsAmount {
+	color: #333;
+	font-weight: 500;
+	font-size: var(--h2);
+}
+
+.items {
+	padding-bottom: 32px;
+	border-bottom: 1px solid var(--colorSecondary);
+}
+.item {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	margin-bottom: 1px;
+}
+.image {
+	border-radius: 4px;
+	margin-right: 16px;
+}
+.details {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+}
+
+.course-name {
+	color: #333;
+	font-weight: 500;
+	font-size: 24px;
+}
+
+.price-author {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 16px;
+	font-weight: 500;
+	color: #333;
+}
+
+.price {
+	width: 80px;
+	text-align: right;
+	font-weight: bold;
+	color: #333;
+}
+
+.checkout {
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 32px;
+	padding-top: 32px;
+}
+.footer {
+	width: 100%;
+	background-color: transparent;
+}
+
+.section-title {
+	background-color: #e1e1e1;
+	padding: 10px 20px;
+	font-size: 16px;
+	color: #333;
+}
+
+.continue-shopping {
+	display: flex;
+	align-items: center;
+	color: #333;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 16px;
+	opacity: 0.8;
+	transition: opacity 0.3s ease-in-out;
+}
+
+.continue-shopping:hover {
+	opacity: 1;
+}
+
+.continue-shopping svg {
+	margin-right: 5px;
+	width: 24px;
+	height: 24px;
+}
+
+.subtotal {
+	font-size: var(text);
+	font-weight: bold;
+}
+
+.remove-button {
+	width: 300px;
+	outline: none;
+	border: none;
+	background: none;
+	text-align: left;
+	font-size: 16px;
+	font-weight: bold;
+	color: #333;
+	padding-top: 4px;
+}
+
+.course-name,
+.price-author {
+	padding-bottom: 4px;
+}

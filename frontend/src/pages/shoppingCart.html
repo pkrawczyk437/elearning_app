@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Shopping Cart</title>
+		<link rel="stylesheet" href="../styles/shoppingCart.css" />
+		<script defer src="../js/getShoppingCartDetails.js"></script>
+	</head>
+	<body>
+		<header class="header">
+			<div class="logo">
+				<img src="../images/Edukato Logo.png" alt="Edukato Logo" />
+				<span>edukato</span>
+			</div>
+			<nav class="nav">
+				<div class="nav-item dropdown">
+					<!-- Dropdown for courses -->
+					Courses ▾
+					<div class="dropdown-menu">
+						<a href="#">Course One</a>
+						<a href="#">Course Two</a>
+						<a href="#">Course Three</a>
+						<a href="#">Course Four</a>
+					</div>
+				</div>
+				<a href="#" class="nav-item">Opinions</a>
+				<!-- Nav-item for opinions -->
+				<a href="#" class="nav-item">Contact</a>
+				<!-- Nav-item for contact -->
+				<a href="#" class="nav-item">FAQ</a>
+				<!-- Nav-item for FAQ -->
+			</nav>
+			<div class="button-container">
+				<button class="button disabled" id="signInButton">
+					<img src="../images/Sign In.svg" alt="Sign In Icon" class="icon" />
+					<span>Sign In</span>
+				</button>
+				<button class="button" id="signUpButton">
+					<img src="../images/Sign Up.svg" alt="Sign In Icon" class="icon" />
+					<span>Sign Up</span>
+				</button>
+			</div>
+		</header>
+		<section class="shopping-cart">
+			<div class="cart-header">
+				<div class="cart-title">Shopping Cart</div>
+				<div class="cart-itemsAmount">0 Items</div>
+			</div>
+			<div class="details-header">
+				<span class="details-title">Product Details</span>
+				<span class="total-title">Total</span>
+			</div>
+			<div class="items">
+				<!-- Repeat this block for each item in the shopping cart -->
+				<div class="item">
+					<img
+						src="../images/bhp.jpeg"
+						alt="Course"
+						class="image"
+						width="80"
+						height="80"
+					/>
+					<div class="details">
+						<div class="course-name">Health and Safety in the Workplace</div>
+						<div class="price-author">
+							<div class="author">Mark Twain</div>
+							<div class="price">$120</div>
+						</div>
+						<button class="remove-button">Remove</button>
+					</div>
+				</div>
+				<!-- Repeat until all items are listed -->
+			</div>
+			<div class="checkout">
+				<div class="subtotal">Subtotal: $360</div>
+				<div class="footer">
+					<a href="#" class="continue-shopping">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+						>
+							<path d="M14 7l-5 5 5 5V7z"></path>
+						</svg>
+						Continue shopping
+					</a>
+					<button class="button">Checkout</button>
+				</div>
+			</div>
+		</section>
+	</body>
+</html>

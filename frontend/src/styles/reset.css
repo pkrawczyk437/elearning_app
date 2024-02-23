@@ -1,0 +1,258 @@
+:root {
+	--container-padding: 64px;
+	--h1XL: 64px;
+	--h1: 48px;
+	--h2: 40px;
+	--h3: 32px;
+	--text: 24px;
+	--colorPrimary: #1e4564;
+	--colorSecondary: #d69533;
+	--colorTertiary: #fff;
+	--colorFourthiary: #333;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* button styles */
+
+.button-container {
+	display: flex;
+	gap: 32px; /* Adjust the gap based on the design */
+	align-items: center;
+	justify-content: center;
+}
+
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 20px; /* Adjusted for better spacing */
+	border-radius: 16px;
+	background-color: #d69533;
+	cursor: pointer;
+	transition: background-color 0.3s ease-out;
+	font-size: var(--text); /* Adjust the font size based on the design */
+	font-weight: 500;
+	color: white;
+	text-decoration: none; /* In case the button is a link */
+	gap: 10px; /* Space between text and icon if present */
+	border: none;
+}
+
+.button.disabled {
+	opacity: 0.5;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.button.disabled:hover {
+	opacity: 1;
+}
+
+/* Specific styles for icons within buttons */
+.button.icon {
+	fill: white;
+	width: 24px; /* Adjust if necessary */
+	height: 24px; /* Adjust if necessary */
+}
+
+.button span {
+	font-size: var(--text); /* Adjust the font size based on the design */
+	font-weight: 500;
+	color: white;
+}
+
+.button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 20px; /* Adjusted for better spacing */
+	border-radius: 16px;
+	background-color: #d69533;
+	cursor: pointer;
+	transition: background-color 0.3s ease-out;
+	font-size: var(--text); /* Adjust the font size based on the design */
+	font-weight: 500;
+	color: white;
+	text-decoration: none; /* In case the button is a link */
+	gap: 10px; /* Space between text and icon if present */
+	border: none;
+}
+
+.button.disabled {
+	opacity: 0.5;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.button.disabled:hover {
+	opacity: 1;
+}
+
+.button span {
+	font-size: var(--text); /* Adjust the font size based on the design */
+	font-weight: 500;
+	color: white;
+}
+
+.course-cards-container {
+	display: flex;
+	justify-content: center;
+	gap: 40px;
+}
+
+.course-card {
+	background-color: white;
+	border-radius: 16px;
+	overflow: hidden;
+	flex-basis: 480px; /* Adjust the spacing based on your design */
+	color: #333;
+	display: flex;
+	flex-direction: column;
+}
+
+.course-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.course-info {
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.author-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.author-profile {
+	width: 64px;
+	height: 64px;
+	border-radius: 50%;
+}
+
+.course-price {
+	font-weight: 700;
+	color: #d69634; /* Use your color theme */
+	font-size: var(--h3);
+}
+
+.course-title {
+	font-size: var(--text);
+	font-weight: 500;
+}
+
+.course-meta {
+	display: flex;
+	justify-content: space-between;
+	font-size: var(--text);
+}
+
+.course-length,
+.active-students {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 48px var(--container-padding);
+}
+
+.logo {
+	font-weight: 500;
+	font-size: var(--text);
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	margin-right: 32px; /* Adjusted for equal spacing with navigation items */
+}
+
+.logo img {
+	width: 56px;
+	margin-right: 8px; /* Equal spacing between the logo image and brand name */
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+}
+
+.nav-item {
+	color: white;
+	text-decoration: none;
+	font-size: var(--text);
+	margin-right: 64px; /* Equal spacing between nav items */
+	font-weight: 500;
+	cursor: pointer;
+	position: relative;
+}
+
+.nav-item:last-child {
+	margin-right: 0;
+}
+
+.nav-item::after {
+	content: '';
+	display: block;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background: #d69634;
+	transform: scaleX(0); /* Start with the element scaled to 0 */
+	transform-origin: bottom left; /* Animate from the left */
+	transition: transform 0.5s ease-in-out;
+}
+
+.nav-item:hover::after {
+	transform: scaleX(1); /* Scale the element to its full size on hover */
+}
+
+/* Dropdown menu styles */
+.nav-item.dropdown {
+	position: relative;
+}
+
+.dropdown-menu {
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	background-color: #2a2a2a;
+	border-radius: 16px;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	transform: translateY(-20px);
+	transition: visibility 0.2s, opacity 0.2s, transform 0.2s;
+	z-index: 1;
+}
+
+.dropdown-menu a {
+	color: white;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-menu a:hover {
+	background-color: #3a3a3a;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+	visibility: visible;
+	opacity: 1;
+	transform: translateY(0);
+}

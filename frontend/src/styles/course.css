@@ -1,0 +1,87 @@
+@import 'reset.css';
+
+.header {
+	background-color: var(--colorPrimary);
+	color: var(--colorTertiary);
+}
+
+.course-header {
+	display: flex;
+	position: relative;
+	height: 70vh;
+	background-color: var(--colorPrimary);
+	width: 100%;
+}
+
+.course-details {
+	padding: 64px;
+	flex-basis: 80%;
+}
+
+.course-details * {
+	margin-bottom: 32px;
+}
+
+.learning-objectives {
+	background-color: var(--colorTertiary);
+	height: 30vh;
+}
+
+.course-header h1 {
+	color: var(--colorTertiary);
+	font-weight: bold;
+	font-size: var(--h1);
+}
+
+.course-description {
+	color: var(--colorTertiary);
+	opacity: 0.8;
+	font-size: var(--text);
+	width: 70%;
+	font-weight: 500;
+}
+
+.created-by {
+	font-size: var(--text);
+	color: var(--colorSecondary);
+	font-weight: 500;
+}
+
+.learning-objectives h2 {
+	color: var(--colorPrimary);
+	font-size: var(--h3);
+	padding: 32px 64px 0;
+}
+
+.objectives-list {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 32px 64px 0;
+}
+
+.learning-item {
+	width: calc(50% - 200px); /* Adjust the width as needed */
+	display: flex; /* Use flexbox for aligning the checkmark and text */
+	align-items: center;
+	color: #f57c00; /* An orange color similar to the screenshot */
+	font-size: 18px;
+	margin-bottom: 16px; /* Space between list items */
+}
+
+.learning-item:nth-child(odd) {
+	margin-right: 10px;
+}
+
+.learning-item span {
+	margin-right: 10px;
+	color: #333; /* Assuming the checkmark is the darker color */
+}
+
+.course-card {
+	position: absolute;
+	top: 15%;
+	right: 5%;
+	height: auto;
+	width: 500px;
+}

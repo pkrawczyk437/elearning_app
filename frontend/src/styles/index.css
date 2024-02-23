@@ -1,0 +1,546 @@
+@import 'reset.css';
+
+body,
+html {
+	background-color: #1e4564;
+	color: white;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 48px var(--container-padding);
+}
+
+.logo {
+	font-weight: 500;
+	font-size: var(--text);
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	margin-right: 32px; /* Adjusted for equal spacing with navigation items */
+}
+
+.logo img {
+	width: 56px;
+	margin-right: 8px; /* Equal spacing between the logo image and brand name */
+}
+
+.main-content {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap; /* Allow content to wrap on smaller screens */
+}
+
+.hero-content {
+	flex: 1;
+	padding: 300px var(--container-padding) 0; /* Align the text content area with the logo */
+}
+
+.title {
+	font-weight: 700;
+	font-size: var(--h1XL);
+	margin-bottom: 15px;
+}
+
+.description {
+	font-weight: 500;
+	font-size: var(--text);
+	color: rgba(255, 255, 255, 0.8);
+	max-width: 600px;
+	margin-bottom: 20px;
+}
+
+.title,
+.description {
+	z-index: 2; /* Make sure text appears above the hero image */
+}
+.hero-image {
+	flex-grow: 1; /* Hero image will grow to occupy the remaining space */
+	max-width: 50%; /* Maximum width each for content and image */
+	object-fit: contain; /* This will make sure the whole image is visible */
+}
+
+.banner {
+	width: 100vw;
+	height: 100vh;
+	background-image: url('../images/about_us-2.jpg'); /* Replace with the correct image path */
+	background-size: cover; /* Use 'cover' for better background image handling */
+	background-position: center; /* Center the background image */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+}
+
+.banner::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5); /* Overlay color and opacity */
+	z-index: 1; /* Ensure it's above the background image and below the text */
+}
+
+.text {
+	font-size: var(--h1XL);
+	color: white;
+	text-align: center;
+	z-index: 2; /* Ensure it's above the overlay */
+}
+
+.highlight {
+	font-weight: bold;
+	color: rgb(214, 150, 52); /* Adjust the color based on the design */
+}
+
+.about-container {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	background-color: #ffffff;
+	color: #1e4564;
+	padding: var(--container-padding);
+	width: 100vw;
+}
+
+.about-main-content {
+	font-size: var(--text);
+	line-height: 2;
+}
+
+.content-wrapper {
+	display: flex;
+	gap: 32px; /* Adjust as needed for spacing between text and image */
+}
+
+.text-content {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	flex: 1;
+	gap: 32px;
+	padding: 64px 0;
+}
+
+.subheader {
+	display: flex;
+	align-items: center;
+}
+
+.subheader-text {
+	font-size: var(--h3);
+}
+
+.orange-line {
+	width: 100px;
+	height: 10px;
+	background-color: #d69634;
+	margin-right: 16px;
+}
+
+.text-header {
+	font-size: 96px;
+}
+
+.image-wrapper {
+	height: 100%; /* Full height as per .text-content */
+	display: flex;
+	align-items: flex-start; /* Align to the top if the image is shorter than .text-content */
+	justify-content: center;
+}
+
+.aboutImage {
+	height: auto;
+	width: 100%; /* Use 100% to match the parent's width */
+	object-fit: cover; /* Cover the area without distorting aspect ratio */
+	object-position: top; /* Align the image to the top */
+}
+
+.explore-courses-section {
+	padding: 48px var(--container-padding);
+	background-color: #1e4564;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.explore-courses-title {
+	color: white;
+	font-size: var(--h2);
+	font-weight: 700;
+	margin-bottom: 40px; /* Adjust as per your design */
+}
+
+.testimonial-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	width: 100vw;
+}
+
+.title-container {
+	width: 100%;
+	background-color: #1e4564; /* Change this to the color of your choice */
+	padding: 20px 0;
+}
+
+.testimonial-title {
+	font-size: 48px;
+	font-weight: bold;
+	color: #fff;
+	padding: 20px;
+	text-align: center;
+}
+
+.testimonial-wrapper-container {
+	padding: var(--container-padding);
+	width: 100%; /* Full width of the screen */
+	height: 100vh;
+	background-color: #f0eeee; /* White background */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 128px;
+	align-items: center;
+}
+
+.testimonial-wrapper {
+	display: flex;
+	overflow-x: scroll;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+}
+
+.testimonial-wrapper::-webkit-scrollbar {
+	display: none;
+}
+
+.testimonial-slide {
+	display: flex;
+	flex: 0 0 100%; /* Each slide takes 100% width of the wrapper */
+	justify-content: space-around;
+	padding: 20px;
+	scroll-snap-align: start; /* Ensures this element aligns to the snap point */
+}
+
+.testimonial-card {
+	flex: 0 0 calc(33.333% - 20px); /* Adjust 33.333% to be 100% / number of cards per page */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	scroll-snap-align: start;
+	border-radius: 16px;
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+	padding: 30px;
+	position: relative;
+	text-align: center;
+}
+
+.quote-icon,
+.testimonial-text,
+.client-image,
+.client-name {
+	margin-bottom: 16px;
+}
+
+.quote-icon {
+	font-size: 120px;
+	color: #d3a034;
+}
+
+.testimonial-text {
+	font-size: var(--text);
+	line-height: 1.4;
+	color: #333;
+}
+
+.client-image {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin: 20px auto 0;
+	line-height: 0; /* Remove the added space below images */
+}
+
+.client-image img {
+	width: 100%;
+	height: auto;
+}
+
+.client-name {
+	font-size: 16px; /* Adjust the font size as needed */
+	font-weight: 500;
+	color: #333; /* Adjust the font color as needed */
+	margin-top: 32px; /* Spacing between the image and the name */
+}
+
+.slider-dots {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.dot {
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	background-color: #c0c0c0;
+	margin: 0 5px;
+	cursor: pointer; /* Optional: if dots are clickable */
+}
+
+.dot.active {
+	background-color: #d3a034;
+}
+
+.faq-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	min-height: 70vh;
+}
+
+.faq-container header {
+	text-align: center;
+	margin-bottom: 64px;
+}
+
+.faq-container header > h1 {
+	margin-bottom: 32px;
+	color: #d69634;
+	font-size: var(--h1);
+	font-weight: 700;
+}
+
+.faq-container header > h2 {
+	color: #d6d6d6;
+	font-weight: 500;
+	font-size: var(--h3);
+}
+
+.faq-list {
+	list-style: none;
+}
+
+.faq-item {
+	margin-bottom: 32px;
+}
+
+.faq-question {
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+	color: white;
+	font-size: var(--text);
+	font-weight: 500;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
+}
+
+.faq-answer-container {
+	padding: 0;
+	max-height: 0;
+	transform: scaleY(0);
+	transform-origin: top;
+	overflow: hidden;
+	transition: transform 0.5s ease-in-out;
+	width: 100%;
+}
+
+.faq-item.active .faq-answer-container {
+	max-height: 100vh;
+	transform: scaleY(1);
+}
+
+.faq-answer {
+	margin: 32px;
+	padding: 32px 0;
+	text-align: center;
+	font-size: 24px;
+	color: #333;
+	background-color: rgba(255, 255, 255, 0.8);
+	border-radius: 16px;
+}
+
+.caret {
+	transition: transform 0.3s ease-in-out;
+	display: inline-block;
+	order: -1;
+}
+
+.faq-item.active .caret {
+	transform: rotate(180deg);
+}
+
+.contact-container {
+	background: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh; /* full screen height */
+	width: 100vw;
+	gap: 256px;
+	padding: var(--container-padding);
+}
+
+.contact {
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.contact-icon,
+.contact-header h1,
+.contact-header p {
+	margin-bottom: 32px;
+}
+
+.contact-form,
+.button.submit-button {
+	margin-top: 48px;
+}
+
+.button.submit-button {
+	background-color: #1e4564;
+}
+
+.contact-icon {
+	width: 120px;
+	height: 120px;
+	background-image: url('../images/Contact\ Icon.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.contact-header h1 {
+	font-size: 48px;
+	color: #3e3e3e;
+}
+
+.contact-header p {
+	font-size: 18px;
+	color: #949494;
+}
+
+.contact-form {
+	display: flex;
+	flex-direction: column;
+}
+
+.input-group {
+	position: relative;
+	margin-bottom: 20px;
+}
+.input-group::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	background: #ccc;
+	transform: scaleX(0); /* Initially scaled to 0 */
+	transform-origin: bottom right; /* Starts scaling from the right */
+	transition: transform 0.3s ease-out;
+	z-index: 0;
+}
+
+.input-group input,
+.input-group textarea {
+	position: relative;
+	width: 100%;
+	padding: 16px 0;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	font-size: 16px;
+	outline: none;
+	background: none;
+	z-index: 1;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+	border-bottom: 2px solid #3ba3d0;
+}
+
+.input-group label {
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #949494;
+	pointer-events: none;
+	transition: transform 0.3s ease;
+}
+
+.input-group input:focus + label,
+.input-group textarea:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:not(:placeholder-shown) + label {
+	transform: translateY(-100%) scale(0.75);
+	color: #3ba3d0;
+}
+
+.input-group input:focus::after,
+.input-group textarea:focus::after,
+.input-group input:not(:placeholder-shown)::after,
+.input-group textarea:not(:placeholder-shown)::after {
+	transform: scaleX(1);
+	transform-origin: bottom left; /* Ends scaling to the left */
+	background-color: #3ba3d0; /* Color matches focused state */
+}
+
+.footer {
+	width: 100%;
+	height: 202px; /* Adjusted from Figma properties */
+	background-color: #1e4564; /* Converted from RGB in Figma */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.footer-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: calc(
+		100% - 40px
+	); /* Figma does not provide this value, added padding */
+	padding: 0 20px;
+}
+
+.footer-section {
+	display: flex;
+	align-items: center;
+}
+
+.logo-section .logo-icon {
+	width: 56px;
+	height: auto;
+	/* Logo path is added in HTML img src */
+}
+
+.logo-section .company-name {
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: 500;
+	margin-left: 10px; /* Adjust as needed */
+}
+/* Additional styling for Copyright section */
+/* Copyright font size, weight and color are taken from the provided Figma properties */
+.copyright-section {
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: 500;
+}
